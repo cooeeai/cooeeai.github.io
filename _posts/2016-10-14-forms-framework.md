@@ -6,6 +6,7 @@ title: Forms Framework
 Lets face it, forms in any paradigm are cumbersome. One must validate input, use the appropriate UI control to
 capture a given data type, and ensure require details are complete. In addition, within a bot interface, the
 framework should:
+
 * Ask only for information not known, and remember details for a later session
 * Confirm some items even if known
 * Process unstructured input and natural language

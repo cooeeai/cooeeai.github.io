@@ -7,6 +7,7 @@ title: Design Concepts
 * Bot Apps – lots of state
 
 General Requirements
+
 * State
 * Resiliency
 * Security

@@ -6,6 +6,7 @@ layout: home
 ---
 
 Cooee is a bot building framework for the JVM and enterprise use. It aims to support non-trivial use cases:
+
 * Massive scalability
 * Multi-platform conversations
 * Complex transactions

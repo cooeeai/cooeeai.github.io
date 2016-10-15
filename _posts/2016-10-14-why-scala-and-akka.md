@@ -8,6 +8,7 @@ Scala is a general purpose programming language that uses the same runtime engin
 It also incorporates functional programming concepts, which emphasizes transformation of data, as a flow, without side effects. It͛s much easier, to develop a complex system, when program functions act like mathematical functions. That is, we expect the same output always for a given set of inputs.
 
 Through its
+
 * Checking of data types at compile time
 * Language features for scalability
 * And general features from its Java heritage
