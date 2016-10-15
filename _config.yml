@@ -27,10 +27,13 @@ url: "https://github.com/cooeeai" # the base hostname & protocol for your site, 
 twitter_username: markmo
 github_username:  markmo
 
+github:
+  repo: https://github.com/cooeeai
+
 # About/contact
 author:
   name: Mark Moloney
-  url: https://github.com/cooeeai
+  url: https://github.com/markmo
   email: m4rkmo@gmail.com
 
 # Custom vars
