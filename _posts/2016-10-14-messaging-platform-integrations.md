@@ -43,3 +43,12 @@ path("skypewebhook") {
   }
 }
 {% endhighlight %}
+
+## Cisco Spark
+
+One key difference between Spark Bots and regular users is that, in group rooms, bots only have access to messages in which they are mentioned. This means that `messages:created` webhooks only fire when the bot is mentioned in a room.
+
+Also, `GET /messages` requires that you specify a special `?mentionedPeople=me` query parameter.
+
+    GET /messages?mentionedPeople=me&roomId=SOME_INTERESTING_ROOM
+    Authorization: Bearer THE_BOTS_ACCESS_TOKEN
