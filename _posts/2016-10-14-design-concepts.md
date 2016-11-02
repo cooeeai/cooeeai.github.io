@@ -26,12 +26,14 @@ General Requirements
 
 ### High-level approaches
 
-* If-then-else (decision tree) approach - quickly becomes difficult to scale to complex cases, especially handling tangential concerns
-* Workflow style approach, with possible sub-flows
-* Finite state machine
-* A grammar or scripting approach
-* Black-box approaches, e.g. neural net
-* Ensemble approach
+1. If-then-else (decision tree) approach - quickly becomes difficult to scale to complex cases, especially handling tangential concerns
+2. Workflow style approach, with possible sub-flows
+3. Finite state machine
+4. A grammar or scripting approach
+5. Black-box approaches, e.g. neural net
+6. Ensemble approach
+
+### Cooee
 
 Cooee's first implementation has adopted a state-machine approach.
 
@@ -89,7 +91,7 @@ say baseball, then the chatbot can offer you a relevant gambit. Or the bot can i
 ChatScript supports concepts. It comes with around 1400 predefined concepts, you can define your own, and includes
 WordNet's ontology.
 
-Case Study - [SuperScript](http://superscriptjs.com/) and [Introducing SuperScript](https://medium.com/@rob_ellis/superscript-ce40e9720bef#.b7ev8dgyi)
+### Case Study - [SuperScript](http://superscriptjs.com/) and [Introducing SuperScript](https://medium.com/@rob_ellis/superscript-ce40e9720bef#.b7ev8dgyi)
 
 Takes a similar a path to ChatScript. An example script is:
 
@@ -102,7 +104,7 @@ Takes a similar a path to ChatScript. An example script is:
 
 1. The user says something, and this is matched by the `*` generic wildcard. The bot then replies with **What is your favorite color?**.
 2. When the next input from the user comes into the system, we first check the history and see if the previous reply has more dialogue. This is noted by the `% What is your favorite color?` line.
-3. We then pull the next trigger, in this case it is `*1*` meaning one word. The bot then replies with **<user input> is my favorite color, too!**.
+3. We then pull the next trigger, in this case it is `*1*` meaning one word. The bot then replies with **[user input] is my favorite color, too!**.
 
 Replies can execute a custom function where they have access to the entire message object, the user object and other resources like the fact databases. You can also pass parameters to the functions from captured input parts:
 
@@ -151,12 +153,12 @@ Messaging Provider.
 
 {% highlight scala %}
 trait MessagingProvider {
-  def sendTextMessage(sender: String, text: String): Unit
-  def sendLoginCard(sender: String, conversationId: String = ""): Unit
-  def sendHeroCard(sender: String): Unit
-  def sendReceiptCard(sender: String, slot: Slot): Unit
-  def sendQuickReply(sender: String, text: String): Unit
-  def getUserProfile(sender: String): Future[String]
+  def sendTextMessage(sender: String, text: String): Future[SendResponse]
+  def sendLoginCard(sender: String, conversationId: String): Future[SendResponse]
+  def sendHeroCard(sender: String, items: List[Item]): Future[SendResponse]
+  def sendReceiptCard(sender: String, slot: Slot): Future[SendResponse]
+  def sendQuickReply(sender: String, text: String): Future[SendResponse]
+  def getUserProfile(sender: String): Future[UserProfile]
 }
 {% endhighlight %}
 
