@@ -16,4 +16,4 @@ Cooee is a bot building framework for the JVM and enterprise use. It aims to sup
 
 A Customer-centric Bot Hydra.
 
-![Hydra Bot](/public/hydra-bot.png)
+![Hydra Bot](/public/multi-device.png)
