@@ -33,6 +33,12 @@ General Requirements
 5. Black-box approaches, e.g. neural net
 6. Ensemble approach
 
+### Comparison
+
+#### State Machine
+
+* Easier to model jumping steps (in a workflow) by being in a given state. For example, no need to ask the user if they have their mobile phone (to recharge a SIM) if they are interacting from a mobile phone (as detected by the front-end).
+
 ### Cooee
 
 Cooee's first implementation has adopted a state-machine approach.
